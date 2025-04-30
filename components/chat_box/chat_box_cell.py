@@ -8,18 +8,18 @@ from services.llm_model_sdks.gemini.gemini_client import GeminiClient
 class ChatBoxCell:
     """Represents a single interactive ChatBox cell in the notebook."""
 
-    def __init__(self, page: ft.Page, delete_callback: Callable[['ChatBoxCell'], None]):
+    def __init__(self, page: ft.Page, update_response: Callable[['str'], None]):
         """
         Initializes a ChatBox.
 
         Args:
             page (ft.Page): The Flet Page object.
-            delete_callback (Callable): A function to call when this cell's
+            update_response (Callable): A function to call when this cell's
                                        delete button is clicked. It receives the
                                        ChatBox instance itself as an argument.
         """
         self.page = page
-        self.delete_callback = delete_callback
+        self.update_response = update_response
         self.gemini_client = GeminiClient()
 
         # --- Flet Controls for the Cell ---
@@ -29,7 +29,7 @@ class ChatBoxCell:
             expand=True,
             border_color=ft.colors.with_opacity(0.8, ft.colors.OUTLINE),
             focused_border_color=ft.colors.PRIMARY,
-            border_radius=ft.border_radius.all(20),
+            border_radius=ft.border_radius.all(40),
             cursor_color=ft.colors.PRIMARY,
             # text_style=ft.TextStyle(font_family="monospace"), # Requires font setup
             on_submit=self.run_command_click # Allow running with Enter key
@@ -95,8 +95,8 @@ class ChatBoxCell:
 
         # Run the command execution in a separate thread
         response = self.send_request(command)
-        
-        self.update_output(response)
+        self.update_output("Printing output")
+        self.update_response(response)
 
 
     def update_output(self, text: str, is_error: bool = False):

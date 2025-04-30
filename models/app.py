@@ -13,6 +13,7 @@ class App:
 
     def get_commands(self):
         command_list = []
+        command = False
         for line in self.response.strip().split('\n'):
             if '```bash' in line:
                 command = True
@@ -27,6 +28,8 @@ class App:
                 command_list.append(line.lstrip())
         return command_list
         
+    def set_response(self, response):
+        self.response = response
         
     def delete_cell(self):
         a =" "
