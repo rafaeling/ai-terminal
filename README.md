@@ -14,7 +14,7 @@ This can be particularly helpful for both beginners who are learning the command
 ## Features
 
 *   **Error Detection:** Automatically captures command output and identifies errors. 
-*   **LLM Integration:** Connects to your preferred LLM API (e.g., OpenAI, Gemini, Claude) to get intelligent suggestions. [19] 
+*   **LLM Integration:** Connects to your preferred LLM API (e.g., OpenAI, Gemini, Claude) to get intelligent suggestions.
 *   **Command Suggestions:** Receives and displays suggested commands to fix the error. 
 *   **Direct Execution:** Allows you to execute the suggested commands directly from the tool. 
 
@@ -33,7 +33,7 @@ This can be particularly helpful for both beginners who are learning the command
     cd ai-terminal
     ```
 
-2.  **Create and activate a virtual environment (recommended):** [15] 
+2.  **Create and activate a virtual environment (recommended):**
     ```bash
     python3 -m venv venv
     source venv/bin/activate
@@ -41,7 +41,7 @@ This can be particularly helpful for both beginners who are learning the command
     *On Windows, use `venv\Scripts\activate`*
 
 3.  **Install the required packages:** 
-    This project uses a `requirements.txt` file to manage its dependencies. To install them, run: [16] 
+    This project uses a `requirements.txt` file to manage its dependencies. To install them, run:
     ```bash
     pip install -r requirements.txt
     ```
