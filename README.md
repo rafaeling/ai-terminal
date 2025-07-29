@@ -8,6 +8,9 @@ This project is a Python-based terminal tool that enhances your command-line exp
 
 This can be particularly helpful for both beginners who are learning the command line and experienced developers who want to quickly resolve errors without switching context to a web browser. 
 
+![AI Terminal Assistant in Action](img/basic-usage.png)
+![Ask AI](img/aks-ai.png)
+
 ## Features
 
 *   **Error Detection:** Automatically captures command output and identifies errors. 
